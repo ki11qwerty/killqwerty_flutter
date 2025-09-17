@@ -1,5 +1,6 @@
 # killqwerty_flutter
 
+BloC - https://pub.dev/packages/flutter_bloc
 День 1 — Setup проекта, монорепо и package-ы
 
 Практика: создать repo, скелет: app, packages/core, packages/domain, packages/data, packages/features/transactions, features/habits; настроить .gitignore, README. День 2 — Dart: актуальный синтаксис, null-safety, sound null-safety

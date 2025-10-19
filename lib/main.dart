@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:killqwerty_flutter/routes/AppRouter.dart';
 
-import 'core/navigation/AppRouter.dart';
 
 void main() {
   final appRouter = AppRouter();

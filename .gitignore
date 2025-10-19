@@ -142,3 +142,6 @@ captures/
 .idea/dictionaries
 .idea/libraries
 .idea/caches
+
+
+lib/core/constants/env.dart

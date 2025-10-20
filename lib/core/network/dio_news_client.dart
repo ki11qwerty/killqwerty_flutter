@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:killqwerty_flutter/core/constants/env.dart';
 
 class DioNewsClient {
   final Dio _dio;
@@ -38,7 +39,18 @@ class DioNewsClient {
   }
 
   Future get(String path, {Map<String, dynamic>? queryParameters, Options? options, CancelToken? cancelToken}) async {
-    return _dio.get(path, queryParameters: queryParameters, options: options, cancelToken: cancelToken);
+    final mergedQueryParameters = <String, dynamic>{};
+    if (queryParameters != null) {
+      mergedQueryParameters.addAll(queryParameters);
+    }
+     mergedQueryParameters['apikey'] = Env.newsKey;
+
+    return _dio.get(
+      path,
+      queryParameters: mergedQueryParameters,
+      options: options,
+      cancelToken: cancelToken,
+    );
   }
 
   Future post(

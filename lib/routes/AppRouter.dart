@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:killqwerty_flutter/screens/bils/ui/BillsScreen.dart';
-import 'package:killqwerty_flutter/screens/news/ui/NewsScreen.dart';
+import 'package:killqwerty_flutter/screens/news/ui/news_screen.dart';
 import 'package:killqwerty_flutter/screens/training/ui/TrainingScreen.dart';
 class AppRouter {
   late final GoRouter router;

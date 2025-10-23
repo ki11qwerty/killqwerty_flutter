@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:killqwerty_flutter/di/injections.dart' as di;
 import 'package:killqwerty_flutter/routes/AppRouter.dart';
 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   final appRouter = AppRouter();
   runApp(MyApp(router: appRouter.router));
 }

@@ -1,5 +1,5 @@
 # killqwerty_flutter
-
+23.10 - 3ч
 BloC - https://pub.dev/packages/flutter_bloc
 День 1 — Setup проекта, монорепо и package-ы
 

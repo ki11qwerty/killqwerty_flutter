@@ -26,7 +26,7 @@ class NewsItem {
 
   factory NewsItem.fromArticle(Article article) {
     return NewsItem(
-      id: article.source.id ?? article.url, // Используем ID источника или URL как уникальный ID
+      id: article.source.id ?? article.url,
       title: article.title,
       description: article.description,
       url: article.url,

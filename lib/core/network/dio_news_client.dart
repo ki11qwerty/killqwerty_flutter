@@ -26,18 +26,22 @@ class LoggingInterceptor extends Interceptor {
       print('✅ RESPONSE[${response.statusCode}] => PATH: ${response.requestOptions.path}');
       print('📋 Response Headers: ${response.headers}');
       print('📊 Response Data Type: ${response.data.runtimeType}');
-      
-      // Логируем тело ответа с ограничением размера
+
       if (response.data is Map || response.data is List) {
         final dataString = response.data.toString();
-        if (dataString.length > 1000) {
+        if (dataString.length >= 500) {
           print('📦 Response Body: [Large response - ${dataString.length} characters]');
           print('📦 Response Preview: ${dataString.substring(0, 500)}...');
         } else {
           print('📦 Response Body: ${response.data}');
         }
-      } else if (response.data is String && response.data.length < 1000) {
-        print('📦 Response Body: ${response.data}');
+      } else if (response.data is String) {
+        if(response.data.length < 500) {
+          print('📦 Response Body: ${response.data}');
+        }else{
+          print('📦 Response Body: [Large response - ${response.data.length} characters]');
+          print('📦 Response Preview: ${response.data.substring(0, 500)}...');
+        }
       } else {
         print('📦 Response Body: [Large response - ${response.data.toString().length} characters]');
       }
@@ -85,7 +89,6 @@ class DioNewsClient {
               responseType: ResponseType.json,
             ),
           ) {
-    // Добавляем базовые заголовки
     _dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
@@ -95,8 +98,7 @@ class DioNewsClient {
         },
       ),
     );
-    
-    // Добавляем логирование
+
     if (kDebugMode) {
       _dio.interceptors.add(LoggingInterceptor());
     }

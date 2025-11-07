@@ -64,7 +64,7 @@ class NewsScreen extends StatelessWidget {
                       ],
                     ),
                     onTap: () {
-                      // Здесь можно добавить переход к полной статье
+                      //TODO :  Здесь будет переход на полною статью
                       print('Tapped on: ${newsItem.title}');
                     },
                   ),

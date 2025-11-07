@@ -16,17 +16,7 @@ Future init() async {
   getIt.registerLazySingleton<NewsInteractor>(
       () => NewsInteractor(repository: getIt())
   );
-//
-// // Data sources
-// getIt.registerLazySingleton(
-// () => ExampleRemoteDataSourceImpl(dioClient: getIt()),
-// );
-//
-// // Repositories
-// getIt.registerLazySingleton(
-// () => ExampleRepositoryImpl(remoteDataSource: getIt()),
-// );
-//
+
 // // Presentation / Cubit
 // getIt.registerFactory(() => ExampleCubit(repository: getIt()));
 }
